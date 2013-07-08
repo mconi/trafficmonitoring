@@ -1,0 +1,39 @@
+<h1>Listing devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Hostname</th>
+      <th>Ip</th>
+      <th>Snmpcommunity</th>
+      <th>Commentar</th>
+      <th>Password</th>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devices.each do |device| %>
+      <tr>
+        <td><%= device.name %></td>
+        <td><%= device.hostname %></td>
+        <td><%= device.ip %></td>
+        <td><%= device.snmpcommunity %></td>
+        <td><%= device.commentar %></td>
+        <td><%= device.password %></td>
+        <td><%= device.location %></td>
+        <td><%= link_to 'Show', device %></td>
+        <td><%= link_to 'Edit', edit_device_path(device) %></td>
+        <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Device', new_device_path %>

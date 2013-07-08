@@ -1,0 +1,39 @@
+<h1>Listing trafficdata</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Switchid</th>
+      <th>Ifindex</th>
+      <th>Ifdescr</th>
+      <th>Ifinoctets</th>
+      <th>Ifoutoctets</th>
+      <th>Diffinoctets</th>
+      <th>Diffoutoctets</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trafficdata.each do |trafficdatum| %>
+      <tr>
+        <td><%= trafficdatum.switchID %></td>
+        <td><%= trafficdatum.ifIndex %></td>
+        <td><%= trafficdatum.ifDescr %></td>
+        <td><%= trafficdatum.ifInOctets %></td>
+        <td><%= trafficdatum.ifOutOctets %></td>
+        <td><%= trafficdatum.diffInOctets %></td>
+        <td><%= trafficdatum.diffOutOctets %></td>
+        <td><%= link_to 'Show', trafficdatum %></td>
+        <td><%= link_to 'Edit', edit_trafficdatum_path(trafficdatum) %></td>
+        <td><%= link_to 'Destroy', trafficdatum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trafficdatum', new_trafficdatum_path %>

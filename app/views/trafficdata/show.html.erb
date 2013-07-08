@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Switchid:</strong>
+  <%= @trafficdatum.switchID %>
+</p>
+
+<p>
+  <strong>Ifindex:</strong>
+  <%= @trafficdatum.ifIndex %>
+</p>
+
+<p>
+  <strong>Ifdescr:</strong>
+  <%= @trafficdatum.ifDescr %>
+</p>
+
+<p>
+  <strong>Ifinoctets:</strong>
+  <%= @trafficdatum.ifInOctets %>
+</p>
+
+<p>
+  <strong>Ifoutoctets:</strong>
+  <%= @trafficdatum.ifOutOctets %>
+</p>
+
+<p>
+  <strong>Diffinoctets:</strong>
+  <%= @trafficdatum.diffInOctets %>
+</p>
+
+<p>
+  <strong>Diffoutoctets:</strong>
+  <%= @trafficdatum.diffOutOctets %>
+</p>
+
+<%= link_to 'Edit', edit_trafficdatum_path(@trafficdatum) %> |
+<%= link_to 'Back', trafficdata_path %>

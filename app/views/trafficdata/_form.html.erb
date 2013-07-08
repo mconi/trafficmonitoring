@@ -1,0 +1,45 @@
+<%= form_for(@trafficdatum) do |f| %>
+  <% if @trafficdatum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trafficdatum.errors.count, "error") %> prohibited this trafficdatum from being saved:</h2>
+
+      <ul>
+      <% @trafficdatum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :switchID %><br>
+    <%= f.number_field :switchID %>
+  </div>
+  <div class="field">
+    <%= f.label :ifIndex %><br>
+    <%= f.text_field :ifIndex %>
+  </div>
+  <div class="field">
+    <%= f.label :ifDescr %><br>
+    <%= f.text_field :ifDescr %>
+  </div>
+  <div class="field">
+    <%= f.label :ifInOctets %><br>
+    <%= f.number_field :ifInOctets %>
+  </div>
+  <div class="field">
+    <%= f.label :ifOutOctets %><br>
+    <%= f.number_field :ifOutOctets %>
+  </div>
+  <div class="field">
+    <%= f.label :diffInOctets %><br>
+    <%= f.number_field :diffInOctets %>
+  </div>
+  <div class="field">
+    <%= f.label :diffOutOctets %><br>
+    <%= f.number_field :diffOutOctets %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
